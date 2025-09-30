@@ -14,9 +14,23 @@
 - **[Tailwind CSS](https://tailwindcss.com/)**
 - **[Alpine.js](https://alpinejs.dev/)**
 
+### Cara Mencoba
+
+1. **Coba di GitHub Pages**  
+    Buka aplikasi langsung di browser melalui [GitHub Pages](https://lemonaddict.github.io/kalkulator-syariah/).
+
+2. **Clone & Jalankan Secara Lokal**  
+    - Clone repositori:
+      ```bash
+      git clone https://github.com/lemonaddict/kalkulator-syariah.git
+      ```
+    - Buka folder proyek di VS Code.
+    - Install ekstensi **Live Server** di VS Code.
+    - Klik kanan pada file `index.html` dan pilih **Open with Live Server**.
+
 ---
 
-## 🇬🇧 English
+## EN English
 
 **Kalkulator Syariah** is a web application that provides various calculators to simplify calculations related to Islamic (sharia) finance, such as zakat, infaq, sadaqah, and other sharia-compliant financial calculations.
 
@@ -29,3 +43,17 @@
 - **HTML**
 - **[Tailwind CSS](https://tailwindcss.com/)**
 - **[Alpine.js](https://alpinejs.dev/)**
+
+### How to Try
+
+1. **Try on GitHub Pages**  
+    Open the app directly in your browser via [GitHub Pages](https://lemonaddict.github.io/kalkulator-syariah/).
+
+2. **Clone & Run Locally**  
+    - Clone the repository:
+      ```bash
+      git clone https://github.com/lemonaddict/kalkulator-syariah.git
+      ```
+    - Open the project folder in VS Code.
+    - Install the **Live Server** extension in VS Code.
+    - Right-click on `index.html` and select **Open with Live Server**.
