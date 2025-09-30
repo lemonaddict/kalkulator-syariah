@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id" x-data="zakatFitrah()">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Zakat Fitrah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <header class="bg-white shadow">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold text-green-700">Kalkulator Syariah</h1>
+      <nav class="space-x-4">
+        <a href="../index.html" class="hover:text-green-600">Beranda</a>
+        <a href="waris.html" class="hover:text-green-600">Ahli Waris</a>
+        <a href="zakat.html" class="font-semibold text-green-700">Zakat</a>
+        <a href="fidyah.html" class="hover:text-green-600">Fidyah</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Kalkulator -->
+  <main class="max-w-xl mx-auto p-6 bg-white rounded-xl shadow mt-10">
+    <h2 class="text-2xl font-bold text-green-700 mb-4">Kalkulator Zakat Fitrah</h2>
+    <p class="text-gray-600 mb-6">
+      Zakat fitrah biasanya setara dengan <strong>2.5 kg beras</strong> atau makanan pokok per orang.
+      Silakan masukkan jumlah anggota keluarga dan harga beras/kg.
+    </p>
+
+    <!-- Form -->
+    <form @submit.prevent>
+      <div class="mb-4">
+        <label class="block mb-1 font-medium">Jumlah Anggota Keluarga</label>
+        <input type="number" min="1" x-model.number="anggota" 
+          class="w-full border rounded-lg px-3 py-2 focus:ring-green-500 focus:border-green-500">
+      </div>
+
+      <div class="mb-4">
+        <label class="block mb-1 font-medium">Harga Beras per Kg (Rp)</label>
+        <input type="number" min="0" x-model.number="hargaBeras"
+          class="w-full border rounded-lg px-3 py-2 focus:ring-green-500 focus:border-green-500">
+      </div>
+
+      <button type="button" @click="hitung"
+        class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
+        Hitung Zakat
+      </button>
+    </form>
+
+    <!-- Hasil -->
+    <div x-show="hasil > 0" x-transition class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+      <h3 class="text-lg font-semibold text-green-700">Hasil Perhitungan</h3>
+      <p class="mt-2 text-gray-700">Total beras: <strong x-text="totalBeras + ' kg'"></strong></p>
+      <p class="mt-1 text-gray-700">Total zakat uang: <strong x-text="'Rp ' + hasil.toLocaleString()"></strong></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-700 text-white text-center py-4 mt-12">
+    <p>&copy; 2025 Kalkulator Syariah. Dibuat dengan ❤️ untuk umat.</p>
+  </footer>
+
+  <!-- Script Alpine -->
+  <script>
+    function zakatFitrah() {
+      return {
+        anggota: 1,
+        hargaBeras: 15000,
+        totalBeras: 0,
+        hasil: 0,
+        hitung() {
+          this.totalBeras = this.anggota * 2.5;
+          this.hasil = this.totalBeras * this.hargaBeras;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
