@@ -50,20 +50,10 @@
   <!-- Footer -->
  <footer id="footer-placeholder"></footer>
 
+  <script src="../assets/js/utils.js"></script>
   <script>
-    document.addEventListener('alpine:init', () => {
-      fetch('/components/navbar.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('navbar-placeholder').innerHTML = html;
-        });
-
-      fetch('/components/footer.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('footer-placeholder').innerHTML = html;
-        });
-    });
+    includeHTML('navbar-placeholder', 'components/navbar.html');
+    includeHTML('footer-placeholder', 'components/footer.html');
   </script>
 
   <!-- Script Alpine -->

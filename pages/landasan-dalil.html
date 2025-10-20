@@ -10,22 +10,38 @@
 <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
   
   <header id="navbar-placeholder"></header>
+
+  <main class="flex-grow max-w-4xl mx-auto p-6 bg-white rounded-xl shadow mt-10">
+    <h2 class="text-2xl font-bold text-green-700 mb-4">Landasan Dalil Kalkulator Syariah</h2>
+    <section class="mb-6">
+      <h3 class="text-xl font-semibold text-green-700 mb-2">Kalkulator Zakat Fitrah</h3>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Hadis Riwayat Abu Dawud dan Tirmidzi: "Rasulullah SAW mewajibkan zakat fitrah sebagai penyuci bagi orang yang berpuasa dari perkataan yang sia-sia dan sebagai makanan bagi orang miskin."</li>
+        <li>QS. At-Taubah (9): 103 - "Ambillah zakat dari sebagian harta mereka, dengan zakat itu kamu membersihkan dan menyucikan mereka."</li>
+      </ul>
+    </section>
+    <section class="mb-6">
+      <h3 class="text-xl font-semibold text-green-700 mb-2">Kalkulator Ahli Waris</h3>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>QS. An-Nisa (4): 11 - "Allah mensyariatkan bagimu tentang (pembagian warisan untuk) anak-anakmu..."</li>
+        <li>Hadis Riwayat Bukhari dan Muslim: "Tidaklah seorang Muslim mewarisi harta kecuali dari empat orang: ayah, ibu, suami/istri, dan anak."</li>
+      </ul>
+    </section>
+    <section>
+      <h3 class="text-xl font-semibold text-green-700 mb-2">Kalkulator Fidyah</h3>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>QS. Al-Baqarah (2): 184 - "Dan barang siapa di antara kamu sakit atau dalam perjalanan (lalu ia berbuka), maka (wajiblah baginya) membayar fidyah..."</li>
+        <li>Hadis Riwayat Abu Dawud: "Fidyah adalah memberi makan seorang miskin untuk setiap hari yang ditinggalkan puasa."</li>
+      </ul>
+    </section>
+  </main>
+
   <footer id="footer-placeholder"></footer>
 
+  <script src="../assets/js/utils.js"></script>
   <script>
-    document.addEventListener('alpine:init', () => {
-      fetch('/components/navbar.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('navbar-placeholder').innerHTML = html;
-        });
-
-      fetch('/components/footer.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('footer-placeholder').innerHTML = html;
-        });
-    });
+    includeHTML('navbar-placeholder', 'components/navbar.html');
+    includeHTML('footer-placeholder', 'components/footer.html');
   </script>
 
 </body>
